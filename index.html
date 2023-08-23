@@ -61,7 +61,7 @@
                     <div data="HTML"><img src="./img/html.svg" alt=""></div>
                     <div data="CSS"><img src="./img/css.svg" alt=""></div>
                     <div data="JavaScript"><img src="./img/js.svg" alt=""></div>
-                    <div data="JQuery"><img src="./img/3069646_circle_jquery_programming_roundicon_icon.png" alt=""></div>
+                    <div data="JQuery"><img src="./img/3069646_circle_jquery_programming_round icon_icon.png" alt=""></div>
                     <div data="BootStrap"><img src="./img/8546808_bootstrap_icon.png" alt=""></div>
                 </div>
             </div>
@@ -119,15 +119,13 @@
                 </div>
             </div>
             <div class="footer_main_form">
-                <form method="post">
-                    <fieldset>
-                        <label>Nome</label>
-                        <input type="text" placeholder="Digite o nome (Empresa/Pessoal)">
-                        <label>E-mail</label>
-                        <input type="email" placeholder="Digite o email (Empresa/Pessoal)">
-                    </fieldset>
-                    
-                    <textarea cols="30" rows="10" placeholder="Digite aqui toda informção para contacto..."></textarea>
+                <form method="post" class="form" id="form">
+                    <div class="form_dados">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome">
+                        <small>mensagem de erro</small>
+                    </div>
+                    <button type="submit" id="btn_form">Enviar</button>
                 </form>
             </div>
         </div>

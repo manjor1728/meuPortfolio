@@ -34,3 +34,46 @@ window.addEventListener('scroll', () =>{
     }
     
 })
+
+
+
+
+
+
+var form = document.getElementById('form')
+var btn_form = document.getElementById('btn_form')
+var nome = document.getElementById('nome')
+
+form.addEventListener('submit', (e)=>{
+    e.preventDefault()
+
+    verificarDados()
+})
+
+
+function verificarDados() {
+    nomeValue = nome.value.trim()
+
+    if (nomeValue === '') {
+        //mensagem de erro
+        erro(nome, 'Preenchimento obrigatório')
+    } else {
+        certo(nome)
+    }
+}
+
+
+function erro(input, mensagem) {
+    let form_control = input.parentElement
+    let small = form_control.querySelector('small')
+
+
+    form_control.className = 'form_dados error'
+    small.innerText = mensagem
+}
+
+function certo(input) {
+    let form_control = input.parentElement
+
+    form_control.className = 'form_dados success'
+}
