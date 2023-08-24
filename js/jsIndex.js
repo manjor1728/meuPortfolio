@@ -41,39 +41,70 @@ window.addEventListener('scroll', () =>{
 
 
 var form = document.getElementById('form')
-var btn_form = document.getElementById('btn_form')
 var nome = document.getElementById('nome')
+var email = document.getElementById('email')
 
-form.addEventListener('submit', (e)=>{
+form.addEventListener('submit', (e) =>{
     e.preventDefault()
 
-    verificarDados()
+    validarForm()
 })
 
 
-function verificarDados() {
-    nomeValue = nome.value.trim()
+function validarForm() {
+    verificarNome()
+    verificarEmail()
 
-    if (nomeValue === '') {
-        //mensagem de erro
-        erro(nome, 'Preenchimento obrigatório')
+
+    let formItens = [...form.querySelectorAll('.form_dados')].every((item)=>{
+        return item.className === 'form_dados'
+    })
+
+    if (formItens) {
+        alert('enviado com sucesso')
     } else {
-        certo(nome)
+        alert('Preencha todos os campos!')
     }
 }
 
 
-function erro(input, mensagem) {
-    let form_control = input.parentElement
-    let small = form_control.querySelector('small')
 
+function verificarNome() {
+    let nomevalue = nome.value.trim()
 
-    form_control.className = 'form_dados error'
-    small.innerText = mensagem
+    if (nomevalue === '') {
+        erroValidacao(nome, 'Campo de preenchimento obrigatório')
+    } else {
+        successoValidacao(nome)
+    }
 }
 
-function certo(input) {
-    let form_control = input.parentElement
+function verificarEmail() {
+    let emailvalue = email.value.trim()
 
-    form_control.className = 'form_dados success'
+    if (emailvalue === '') {
+        erroValidacao(email, 'Campo de preenchimento obrigatório')
+    } else if (!emailErrado(emailvalue)) {
+        erroValidacao(email, 'Email inválido')
+    } else {
+        successoValidacao(email)
+    }
+}
+
+
+
+function erroValidacao(input, mensagem) {
+    let bordaInput = input.parentElement
+    let msgAlert = bordaInput.querySelector('small')
+
+    bordaInput.className = 'form_dados error'
+    msgAlert.innerText = mensagem
+}
+function successoValidacao(input) {
+    let bordaInputOk = input.parentElement
+
+    bordaInputOk.classList = 'form_dados'
+}
+function emailErrado(email) {
+    return /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(email)
 }

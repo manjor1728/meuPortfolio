@@ -303,19 +303,21 @@
 }
 .footer_main_form .form_dados label{
     color: #fff;
+    font-size: 20px;
 }
 .footer_main_form .form_dados input{
     width: 100%;
     padding: 10px;
     display: block;
     outline: 0;
-    font-size: 14px;
+    font-size: 16px;
     border: none;
     border-radius: 3px;
+    margin-top: 4px;
 }
-.footer_main_form .form_dados.success input{
+/* .footer_main_form .form_dados.success input{
     border: 3px solid #4ECA64;
-}
+} */
 
 .footer_main_form .form_dados.error input {
     border: 3px solid #DB5A5A;
@@ -326,6 +328,9 @@
     margin: 5px;
     font-size: 14px;
 }
+/* .form_dados.success small {
+    visibility: hidden;
+} */
 .form_dados.error small {
     visibility: visible;
     color: #DB5A5A;
