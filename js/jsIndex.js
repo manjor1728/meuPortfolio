@@ -43,68 +43,124 @@ window.addEventListener('scroll', () =>{
 var form = document.getElementById('form')
 var nome = document.getElementById('nome')
 var email = document.getElementById('email')
+var txtArea = document.getElementById('txtArea')
 
-form.addEventListener('submit', (e) =>{
-    e.preventDefault()
+form.addEventListener('submit', evt =>{
+    evt.preventDefault()
 
-    validarForm()
+    validarEnviarForm()
+    validarEmail()
+    validarCampotexto()
 })
 
 
-function validarForm() {
-    verificarNome()
-    verificarEmail()
+/* verificar e validar o campo de texo */
+function validarCampotexto() {
+    let txtAreavalue = txtArea.value.trim()
 
-
-    let formItens = [...form.querySelectorAll('.form_dados')].every((item)=>{
-        return item.className === 'form_dados'
-    })
-
-    if (formItens) {
-        alert('enviado com sucesso')
+    if (txtAreavalue === '') {
+        errorTextarea(txtArea, 'Campo de preenchimento obrigatório')
+        console.log('no')
     } else {
-        alert('Preencha todos os campos!')
+        let txtAreaOk = txtArea.parentElement
+
+        txtAreaOk.className = 'formDados_textArea'
+        console.log('yah')
     }
+}
+//função para mostrar o erro no campo de texto
+function errorTextarea(textarea, mensagem) {
+    let txtareaExibirErro = textarea.parentElement
+    let msgExibirErro = txtareaExibirErro.querySelector('small')
+
+    txtareaExibirErro.className = 'formDados_textArea error'
+    msgExibirErro.innerText = mensagem
 }
 
 
-
-function verificarNome() {
-    let nomevalue = nome.value.trim()
-
-    if (nomevalue === '') {
-        erroValidacao(nome, 'Campo de preenchimento obrigatório')
-    } else {
-        successoValidacao(nome)
-    }
-}
-
-function verificarEmail() {
+/* verificar e validar o email */
+function validarEmail() {
     let emailvalue = email.value.trim()
 
     if (emailvalue === '') {
-        erroValidacao(email, 'Campo de preenchimento obrigatório')
-    } else if (!emailErrado(emailvalue)) {
-        erroValidacao(email, 'Email inválido')
+        errorEmail(email, 'Campo de preenchimento obrigatório')
+        console.log('no')
     } else {
-        successoValidacao(email)
+        let emailOk = email.parentElement
+
+        emailOk.className = 'form_dados'
+        console.log('yah')
+    }
+}
+// função para mostrar erro no campo do email
+function errorEmail(input, mensagem) {
+    let inputExibirErro = input.parentElement
+    let msgExibirErro = inputExibirErro.querySelector('small')
+
+    inputExibirErro.className = 'form_dados error'
+    msgExibirErro.innerText = mensagem
+}
+
+
+/* verificar e validar o nome */
+function validarNome() {
+    let nomevalue = nome.value.trim()
+
+    if (nomevalue === '') {
+        errorNome(nome, 'Campo de preenchimento obrigatório')
+        console.log('no')
+    } else {
+        let nomeOk = nome.parentElement
+        
+        nomeOk.className = 'form_dados'
+        console.log('yah')
     }
 }
 
+function errorNome(input, mensagem) {
+    let inputExibirErro = input.parentElement
+    let msgExibirErro = inputExibirErro.querySelector('small')
 
-
-function erroValidacao(input, mensagem) {
-    let bordaInput = input.parentElement
-    let msgAlert = bordaInput.querySelector('small')
-
-    bordaInput.className = 'form_dados error'
-    msgAlert.innerText = mensagem
+    inputExibirErro.className = 'form_dados error'
+    msgExibirErro.innerText = mensagem
 }
-function successoValidacao(input) {
-    let bordaInputOk = input.parentElement
 
-    bordaInputOk.classList = 'form_dados'
-}
-function emailErrado(email) {
-    return /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/.test(email)
+/* verificar validar e enviar o formulario */
+function validarEnviarForm() {
+    validarNome()
+    validarEmail()
+    validarCampotexto()
+
+    /* campo de texto */
+    let valEnvCampotexto = form.querySelectorAll('.formDados_textArea')
+
+    let valEnvCampotexto2 = [...valEnvCampotexto].every((evt)=>{
+        return evt.className === ('formDados_textArea')
+    })
+    if (valEnvCampotexto2) {
+        console.log('Enviado com sucesso!')
+    }
+
+
+    /* email */
+    let valEnvEmail = form.querySelectorAll('.form_dados')
+
+    let valEnvEmail2 = [...valEnvEmail].every((evt)=>{
+        return evt.className === ('form_dados')
+    })
+    if (valEnvEmail2) {
+        console.log('Enviado com sucesso!')
+    }
+
+
+    /* nome */
+    let valEnvForm = form.querySelectorAll('.form_dados')
+
+    let valEnvForm2 = [...valEnvForm].every((evt)=>{
+        return evt.className === ('form_dados')
+    })
+
+    if (valEnvForm2) {
+        console.log('Enviado com sucesso!')
+    }
 }
