@@ -130,7 +130,7 @@ function errorNome(input, mensagem) {
     msgExibirErro.innerText = mensagem
 }
 function caracterespecialNome(input) {
-    return /[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]/.test(input)
+    return /[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/.test(input)
 }
 
 /* verificar validar e retornar apenas quando está tudo preemchido 
