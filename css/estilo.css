@@ -328,48 +328,19 @@
     letter-spacing: 2px;
     cursor: pointer;
 }
-.form_dados small {
-    visibility: hidden;
-    position: absolute;
-    margin: 5px;
-    font-size: 14px;
-}
-.form_dados.error small {
-    visibility: visible;
-    color: #DB5A5A;
-    margin-left: 5px;
-    margin-top: 0;
-}
-.footer_main_form .form_dados.error input {
-    border: 3px solid #DB5A5A;
-}
 
 .formDados_textArea{
-    max-width: 513px;
-    max-height: 246px;
+    max-width: 100%;
+    max-height: 206px;
     margin-bottom: 1.5rem;
     display: block;
 }
 .formDados_textArea #txtArea{
     max-width: 100%;
-    max-height: 246px;
+    max-height: 206px;
     border-radius: 5px;
     display: block;
-}
-.formDados_textArea.error textarea{
-    border: 2px solid #DB5A5A;
-}
-.formDados_textArea small{
-    visibility: hidden;
-    position: absolute;
-    margin: 5px;
-    font-size: 14px;
-}
-.formDados_textArea.error small{
-    visibility: visible;
-    color: #DB5A5A;
-    margin-left: 5px;
-    margin-top: 0;
+    padding: 10px;
 }
 
 
@@ -389,7 +360,6 @@
 ul li a{
     font-size: 40px;
     color: #fff;
-    border-radius: 50%;
     opacity: 0.7;
 }
 ul li a:hover{
