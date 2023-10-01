@@ -234,15 +234,92 @@
 
 
 
+/* PROJECTOS */
+#projectos{
+    width: 100%;
+    height: 100%;
+}
+.projectosMain{
+    width: 80%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding-bottom: 4rem;
+    background: #f1f0f06e;
+}
+#projectos h1{
+    font-size: 30px;
+    text-align: center;
+    padding: 2rem 0 4rem;
+}
+.projectos{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    gap: 5%;
+    justify-content: space-between;
+}
+.projecto{
+    width: 45%;
+    height: 100%;
+    display: block;
+}
+.projecto img{
+    width: 100%;
+    height: 80%;
+    margin-bottom: 1rem;
+    box-shadow: 1px 1px 5px -1px;
+}
+.btnProjecto{
+    width: 100%;
+    display: flex;
+}
+.btnProjecto{
+    width: 100%;
+    display: flex;
+    gap: 6%;
+    justify-content: space-between;
+}
+.btnProjecto .btnProj{
+    width: 12rem;
+    height: 3rem;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid;
+}
+.btnProjecto .btnInfoProj{
+    width: 12rem;
+    height: 3rem;
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 6px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    border: 1px solid;
+}
+.btnInfoProj i{
+    color: #1d1dfd;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+
+
+
 #footer{
     width: 100%;
     height: auto;
     display: block;
-    margin-top: 2rem;
     background: #000;
 }
 .footer_main{
-    width: 90%;
+    width: 80%;
     height: 80%;
     margin: 0 auto;
     display: flex;
@@ -250,10 +327,10 @@
 }
 .footer_main h1{
     color: #fff;
-    font-size: 25px;
+    font-size: 28px;
     text-align: center;
-    margin-bottom: 27px;
-    margin-top: 20px;
+    margin-bottom: 4rem;
+    margin-top: 3rem;
 }
 .footer_main .footer_main_info{
     width: 100%;
@@ -777,21 +854,14 @@ ul li a:hover{
         height: 100%;
         padding: 0;
     }
-    #footer .footer_main_form form fieldset{
-        width: 100%;
-        height: 45%;
-        font-size: 14px;
-        margin-bottom: 0px;
-    }
-    #footer .footer_main_form form fieldset input{
-        height: 34px;
+    #footer .footer_main_form form input{
         width: 100%;
         font-size: 18px;
         padding: 6px 10px;
     }
     #footer .footer_main_form form textarea{
         width: 100%;
-        height: 50%;
+        height: 100%;
         margin-top: 3%;
     }
 
