@@ -23,8 +23,8 @@
                 <ul>
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="">Projectos</a></li>
-                    <li><a href="#footer">Contactos</a></li>
+                    <li><a href="#projectos">Projectos</a></li>
+                    <li><a href="#contactos">Contactos</a></li>
                 </ul>
             </div>
 
@@ -90,7 +90,7 @@
 
                 <h3>Sou um desenvolvedor frontend com domínio e habilidades em <p>HTML, CSS, JavaScript e BootStrap</p></h3>
 
-                <h4>Meu nome é Narciso Manjor, desenvolvedor web frontend apaixonado por tecnologia e soluções criativas. Tenho domínio das tecnologias ora referenciadas, nunca trabelhei em nenhuma empresa como programador e actualmente busco a primeira oportunidade como Web Developer Frontend para desenvolvimento a nível pessoal e profissional e desempenhar as funções confiadas com rigor, precisão e excelência.</h4>
+                <h4>Meu nome é Narciso Manjor, desenvolvedor web frontend apaixonado por tecnologia e soluções criativas. Tenho domínio das tecnologias ora referenciadas, nunca trabelhei em nenhuma empresa como programador e actualmente busco a primeira oportunidade como Web Developer Frontend para desenvolvimento quer seja a nível pessoal e profissional e desempenhar as funções a serem confiadas com rigor, precisão e excelência.</h4>
 
                 <h4>Abaixo está o meu <span>currículo</span> para download.</h4>
                 
@@ -111,15 +111,15 @@
                 <div class="projecto">
                     <img src="./img/imgVC.PNG" alt="">
                     <div class="btnProjecto">
-                        <button type="button" class="btnProj">Ver projecto</button>
-                        <button type="button" class="btnInfoProj">Info <i class="fa-solid fa-circle-info"></i></button>
+                        <a href="https://manjor1728.github.io/grupoCoral/" target="_blank" rel="noopener"><button type="button" class="btnProj">Ver projecto</button></a>
+                        <button type="button" class="btnInfoProj" id="abrirModal2">Info <i class="fa-solid fa-circle-info"></i></button>
                     </div>
                 </div>
                 <div class="projecto">
                     <img src="./img/imdNVD.PNG" alt="">
                     <div class="btnProjecto">
-                        <button type="button" class="btnProj">Ver projecto</button>
-                        <button type="button" class="btnInfoProj">Info <i class="fa-solid fa-circle-info"></i></button>
+                        <a href="https://manjor1728.github.io/nvidea/" target="_blank" rel="noopener noreferrer"><button type="button" class="btnProj">Ver projecto</button></a>
+                        <button type="button" class="btnInfoProj" id="abrirModal">Info <i class="fa-solid fa-circle-info"></i></button>
                     </div>
                 </div>
             </div>
@@ -132,15 +132,15 @@
 
 
 
-    <footer id="footer">
-        <div class="footer_main">
+    <section id="contactos">
+        <div class="contactos">
                 <h1>Contactos</h1>
-            <div class="footer_main_info">
+            <div class="contactos_main_info">
                 <p><b>Telemóvel:</b> <br> +351 935 086 868</p>
                 <p><b>E-mail:</b> <br> nlmanjor1728@gmail.com</p>
                 <p><b>WhatsApp:</b> <br> +351 935 086 868</p>
             </div>
-            <div class="footer_main_form">
+            <div class="contactos_main_form">
                 <form action="https://formsubmit.co/nlmanjor1728@gmail.com" method="post" class="form" id="form">
                     <div class="form_dados">
                         <label for="nome">Nome</label>
@@ -161,25 +161,71 @@
                 </form>
             </div>
         </div>
+    </section>
+
+
+
+
+
+    <section id="footer">
         <div class="footer_redesSociais">
             <ul>
                 <li>
-                    <a href="https://web.whatsapp.com/" target="_blank"><i class="fa-brands fa-square-whatsapp"></i></a>
+                    <a href="https://web.whatsapp.com/" target="_blank" rel="noopener"><i class="fa-brands fa-square-whatsapp"></i></a>
                 </li>
                 <li>
-                    <a href="https://github.com/manjor1728" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+                    <a href="https://github.com/manjor1728" target="_blank" rel="noopener"><i class="fa-brands fa-square-github"></i></a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/narciso-manjor-b73849286/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/narciso-manjor-b73849286/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
                 </li>
             </ul>
+            <span>Desenvolvido por <small>"Narciso Manjor"</small></span>
         </div>
-    </footer>
+    </section>
 
     <div id="up" class="aparecer">
         <a href="#inicio"><img src="./img/botaoUp.png" alt="imagem de uma seta direcionada para cima"></a>
         
     </div>
+
+
+
+
+
+
+    <section id="modal">
+        <div class="fundoModal fecharModal"></div>
+        <div class="modal fecharModal">
+            <div class="headerModal">
+                <h3>Informação <i class="fa-solid fa-circle-info"></i></h3>
+                <p id="btnFecharModal">x</p>
+            </div>
+            <div class="bodyModal">
+                <p>
+                    Este site não é uma cópia a 100% mas sim uma imitação do site 'Oficial' da NVIDEA, e foi desenvolvido segundo as minhas regras e opções com a única e exclusiva finalidade acadêmica ou seja, para desenvolvimento e aperfeiçoamento das minhas habilidades acadêmica. E o site foi feito com as tecnologias HTML5, CSS e JavaScript, e sendo completamente responsivo<br><br>
+                    Obrigado.<br>
+                    Narciso Manjor
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="modal2">
+        <div class="fundoModal2 fecharModal2"></div>
+        <div class="modal2 fecharModal2">
+            <div class="headerModal2">
+                <h3>Informação <i class="fa-solid fa-circle-info"></i></h3>
+                <p id="btnFecharModal2">x</p>
+            </div>
+            <div class="bodyModal2">
+                <p>
+                    Este é um site de uma banda fictícia mas com imagens de minha autoria, e foi feito para desenvolvimento e aperfeiçoamento das minhas habilidades acadêmica, sendo ele completamente responsivo e desenvolvido com as tecnologia CSS, HTML5, JavaScript e BootStrap.<br><br>
+                    Obrigado <br>
+                    Narciso Manjor
+                </p>
+            </div>
+        </div>
+    </section>
         
    
 

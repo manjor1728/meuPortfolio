@@ -34,3 +34,39 @@ window.addEventListener('scroll', () =>{
     }
     
 })
+
+
+
+
+
+/* MODAL */
+const btnFecharModal = document.getElementById('btnFecharModal')
+const abrirModal = document.getElementById('abrirModal')
+const fundoModal = document.querySelector('.fundoModal')
+const modal = document.querySelector('.modal')
+
+const btnFecharModal2 = document.getElementById('btnFecharModal2')
+const abrirModal2 = document.getElementById('abrirModal2')
+const fundoModal2 = document.querySelector('.fundoModal2')
+const modal2 = document.querySelector('.modal2')
+
+
+abrirModal.addEventListener('click', ()=>{
+    toggleModal()
+})
+btnFecharModal.addEventListener('click',()=>{
+    toggleModal()
+})
+
+const toggleModal = ()=>{
+    fundoModal.classList.toggle('fecharModal')
+    modal.classList.toggle('fecharModal')
+}
+abrirModal2.addEventListener('click', ()=>{
+    fundoModal2.classList.toggle('fecharModal2')
+    modal2.classList.toggle('fecharModal2')
+})
+btnFecharModal2.addEventListener('click', ()=>{
+    fundoModal2.classList.toggle('fecharModal2')
+    modal2.classList.toggle('fecharModal2')
+})

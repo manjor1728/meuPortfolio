@@ -164,7 +164,9 @@
     height: 100%;
     display: flex;
     margin: 0 auto;
-    padding: 0rem 0 2rem 0;
+    padding: 0rem 20px 3rem 0;
+    background: #f1f0f06e;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.048);
 }
 .sobre_img{
     width: 40%;
@@ -244,7 +246,6 @@
     height: 100%;
     display: block;
     margin: 0 auto;
-    margin-top: 1rem;
     padding-bottom: 4rem;
     background: #f1f0f06e;
 }
@@ -283,7 +284,7 @@
     justify-content: space-between;
 }
 .btnProjecto .btnProj{
-    width: 12rem;
+    width: 11rem;
     height: 3rem;
     padding: 10px 20px;
     font-size: 20px;
@@ -295,7 +296,7 @@
 .btnProjecto .btnInfoProj{
     width: 12rem;
     height: 3rem;
-    padding: 10px 20px;
+    padding: 10px 15px;
     font-size: 20px;
     border-radius: 6px;
     border: none;
@@ -305,68 +306,142 @@
 }
 .btnInfoProj i{
     color: #1d1dfd;
-    font-size: 20px;
-    margin-left: 10px;
+    font-size: 18px;
+    margin-left: 8px;
+}
+#projectos button:hover{
+    transition: all .8s;
+    border: 1px solid #1d1dfd;
 }
 
 
 
 
-#footer{
+/* MODAL */
+#modal .fundoModal, #modal2 .fundoModal2{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 999;
+    position: fixed;
+    transition: all .6s;
+}
+#modal .modal, #modal2 .modal2{
+    width: 400px;
+    height: 340px;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    position: fixed;
+    background: #d8d6d6de;
+    border-radius: 3px;
+    transition: all .8s;
+}
+.modal .headerModal, .modal2 .headerModal2{
+    display: flex;
+    height: 3rem;
+    margin: 0 0px 20px;
+    border-bottom: 1px solid;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.headerModal h3, .headerModal2 h3{
+    font-size: 25px;
+    color: #1d1dfd;
+}
+.headerModal p, .headerModal2 p{
+    width: 45px;
+    height: 30px;
+    line-height: 25px;
+    text-align: center;
+    background: #ff0000;
+    opacity: .8;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.headerModal p:hover, .headerModal2 p:hover{
+    opacity: 1;
+    transition: all .6s ease-out;
+}
+.bodyModal p, .bodyModal2 p{
+    padding: 10px 20px 0;
+    text-align: justify;
+}
+.fecharModal, .fecharModal2{
+    opacity: 0;
+    pointer-events: none;
+}
+#modal .modal.fecharModal, #modal2 .modal2.fecharModal2{
+    top: -15rem;
+}
+
+
+
+
+
+/* CONTACTOS */
+#contactos{
     width: 100%;
     height: auto;
-    display: block;
-    background: #000;
 }
-.footer_main{
+.contactos{
     width: 80%;
-    height: 80%;
+    height: auto;
+    display: block;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    background: #f1f0f06e;
+    padding: 0 20px 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.048);
 }
-.footer_main h1{
-    color: #fff;
+.contactos h1{
+    color: #000;
     font-size: 28px;
     text-align: center;
     margin-bottom: 4rem;
-    margin-top: 3rem;
+    padding-top: 3rem;
 }
-.footer_main .footer_main_info{
+.contactos .contactos_main_info{
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
-    color: #fff;
+    color: #000;
     justify-content: space-between;
 }
-.footer_main_info p{
+.contactos_main_info p{
     font-size: 20px;
     margin-right: 5%;
 }
 
-.footer_main_form{
+.contactos_main_form{
     width: 100%;
     height: auto;
     padding-top: 2%;
 }
-.footer_main_form form{
+.contactos_main_form form{
     width: 100%;
     height: 100%;
     display: block;
 }
-.footer_main_form .form_dados{
+.contactos_main_form .form_dados{
     display: block;
 }
-.footer_main_form .form_dados:not(:first-of-type){
+.contactos_main_form .form_dados:not(:first-of-type){
     margin-bottom: 2rem;
     margin-top: 1rem;
 }
-.footer_main_form .form_dados label{
-    color: #fff;
+.contactos_main_form .form_dados label{
+    color: #000;
     font-size: 22px;
     font-weight: bold;
 }
-.footer_main_form .form_dados input{
+.contactos_main_form .form_dados input{
     width: 100%;
     padding: 8px 10px;
     display: block;
@@ -376,6 +451,7 @@
     border-radius: 3px;
     margin-top: -2px;
     font-size: 20px;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 #btn_form{
@@ -406,27 +482,46 @@
 }
 
 
+
+
+/* RODAPÉ */
+#footer{
+    width: 100%;
+    height: 6rem;
+    background: #000;
+    padding: 1.5rem 0 2rem;
+}
 .footer_redesSociais{
     width: 25%;
-    height: 20%;
+    height: auto;
+    display: block;
     margin: 0 auto;
-    padding-top: 3%;
+    text-align: center;
 }
 .footer_redesSociais ul{
-    width: 100%;
+    width: 50%;
     height: 100%;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 ul li a{
-    font-size: 40px;
+    font-size: 25px;
     color: #fff;
     opacity: 0.7;
 }
 ul li a:hover{
     opacity: 1;
     transition: .6s;
+}
+.footer_redesSociais span{
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+.footer_redesSociais span small{
+    text-decoration: underline;
 }
 
 
@@ -441,13 +536,16 @@ ul li a:hover{
     right: 10px;
     border-radius: 50%;
     opacity: 0;
-    transition: 2s;
     background-color: #504e4e;
 }
 #up a img{
     width: 100%;
     height: 100%;
     border-radius: 50%;
+}
+#up a{
+    transition: all 4s;
+    scroll-behavior: smooth;
 }
 
 
@@ -568,7 +666,10 @@ ul li a:hover{
     #sobre{
         width: 100%;
         display: block;
-        padding-top: 1.5rem;
+    }
+    #sobre .sobre_main{
+        width: 85%;
+        padding: 0 20px;
     }
     .sobre_img{
         display: none;
@@ -579,59 +680,80 @@ ul li a:hover{
 
 
 
+    /* PROJECTOS */
+    .projectosMain{
+        width: 85%;
+    }
+    .btnProjecto .btnProj{
+        width: 8rem;
+        height: 2rem;
+        padding: 0px;
+        font-size: 18px;
+    }
+    .btnProjecto .btnInfoProj{
+        width: 6rem;
+        height: 2rem;
+        padding: 0px;
+        font-size: 18px;
+    }
+    .btnInfoProj i{
+        font-size: 16px;
+        margin-left: 0px;
+    }
 
 
-   /* FOOTER */
-   #footer{
+
+
+   /* CONTACTOS */
+   #contactos{
     width: 100%;
     height: auto;
-    padding-bottom: 3rem;
+    padding-bottom: 0rem;
+    margin-bottom: 0;
     }
-   .footer_main{
+   .contactos{
+    width: 85%;
     height: auto;
     display: flex;
+    margin-bottom: 0;
     flex-direction: column;
     }
-    .footer_main_info{
+    .contactos_main_info{
         width: 100%;
         height: auto;
     }
-    .footer_main_info p:not(:last-of-type){
+    .contactos_main_info p:not(:last-of-type){
         margin-right: 3%;
         border-right: 1px solid;
         padding-right: 4%;
     }
-    .footer_main_info p:last-of-type{
+    .contactos_main_info p:last-of-type{
         margin-right: 0%;
     }
-    .footer_main_info p{
+    .contactos_main_info p{
         font-size: 20px;
     }
 
-    .footer_main .footer_main_form{
+    .contactos_main .contactos_main_form{
         width: 100%;
         height: auto;
         padding: 15px 0 0;
     }
-    .footer_main_form form{
+    .contactos_main_form form{
         width: 100%;
         height: 100%;
         padding: 0;
     }
     
-    .footer_main_form .form_dados:not(:first-of-type){
+    .contactos_main_form .form_dados:not(:first-of-type){
         margin-bottom: 2rem;
         margin-top: 1rem;
     }
-    .footer_main_form .form_dados label{
+    .contactos_main_form .form_dados label{
         font-size: 20px;
     }
-    .footer_redesSociais{
-        width: 25%;
-        height: 25%;
-        margin-top: 5rem;
-    }
-    .footer_main_form .form_dados input{
+    
+    .contactos_main_form .form_dados input{
         padding: 8px 10px;
         font-size: 20px;
     }
@@ -648,8 +770,19 @@ ul li a:hover{
         display: block;
     }
 
-    .footer_redesSociais{
-        height: 20%;
+
+
+    /* FOOTER */
+    #footer{
+        padding: 1rem 0 2rem;
+    }
+    #footer .footer_redesSociais{
+        width: 40%;
+        height: auto;
+    }
+    #footer .footer_redesSociais ul{
+        width: 50%;
+        height: auto;
     }
 }
 
@@ -704,7 +837,8 @@ ul li a:hover{
 
 /* SOBRE */
     #sobre .sobre_main{
-        width: 90%;
+        width: 100%;
+        padding: 0 30px 3rem;
     }
     #sobre .sobre_info h4{
         font-weight: normal;
@@ -717,64 +851,91 @@ ul li a:hover{
     }
 
 
-    /* FOOTER */
-    .footer_main{
-        height: 75%;
+    /* PROJECTOS */
+    #projectos .projectosMain{
+        width: 100%;
+        padding: 2rem 30px 3rem;
+    }
+    #projectos .projectosMain h1{
+        padding: 0 0 35px;
+    }
+    .projectos{
+        width: 100%;
+    }
+    .projecto{
+        width: 48%;
+    }
+    .btnProjecto .btnProj{
+        width: auto;
+        height: auto;
+        padding: 2px 2px;
+        font-size: 16px;
+        border-radius: 3px;
+    }
+    .btnProjecto .btnInfoProj{
+        width: auto;
+        height: auto;
+        padding: 2px 2px;
+        font-size: 16px;
+    }
+    .btnInfoProj i{
+        font-size: 12px;
+    }
+
+
+    /* CONTACTOS */
+    .contactos{
+        width: 100%;
+        height: auto;
         display: flex;
+        padding: 2rem 30px 3rem;
         flex-direction: column;
     }
-    #footer .footer_main .footer_main_info{
+    #contactos .contactos_main_info{
         border: none;
         width: 100%;
         height: auto;
         display: block;
         text-align: center;
     }
-    .footer_main h1{
-        color: #fff;
+    .contactos h1{
+        color: #000;
         font-size: 25px;
         text-align: center;
-        margin-bottom: 27px;
-        margin-top: 20px;
+        margin-bottom: 35px;
+        margin-top: 0px;
+        padding: 0;
     }
-    .footer_main_info p{
+    .contactos_main_info p{
         width: 100%;
         font-size: 18px;
     }
-    .footer_main_info p{
+    .contactos_main_info p{
         border-top: 1px solid;
         padding-bottom: 15px;
     }
-    .footer_main_info p:not(:last-of-type){
+    .contactos_main_info p:not(:last-of-type){
         border-right: none;
     }
     
-    #footer .footer_main .footer_main_form{
+    #contactos .contactos_main_form{
         width: 100%;
         height: 55%;
         padding: 0;
     }
-    .footer_main_form form{
+    .contactos_main_form form{
         width: 100%;
         height: 100%;
         padding: 0;
     }
-    .footer_main_form .form input{
+    .contactos_main_form .form input{
         font-size: 12px;
         padding: 6px 10px;
         font-size: 18px;
     }
-    .footer_main_form .form label{
+    .contactos_main_form .form label{
         font-size: 18px;
     }
-    .footer_redesSociais{
-        width: 45%;
-        height: 25%;
-    }
-    .footer_redesSociais ul li a{
-        opacity: 1;
-    }
-    
     .formDados_textArea{
         max-width: 100%;
         max-height: 144px;
@@ -793,6 +954,22 @@ ul li a:hover{
         padding: 8px 10px;
         margin-top: 0;
     }
+
+
+    /* FOOTER */
+    #footer .footer_redesSociais{
+        width: 60%;
+        height: auto;
+    }
+    #footer .footer_redesSociais ul{
+        width: 50%;
+        height: auto;
+    }
+    .footer_redesSociais ul li a{
+        opacity: 1;
+    }
+
+
 
     #up{
         width: 25px;
@@ -832,6 +1009,58 @@ ul li a:hover{
     }
 
 
+    /* PROJECTOS */
+    #projectos{
+        background: #f1f0f06e;
+    }
+    .projectosMain{
+        padding-bottom: 2.5rem;
+        background: none;
+        width: 90%;
+    }
+    #projectos .projectosMain h1{
+        margin-bottom: 25px;
+        padding-bottom: 0px;
+    }
+    .projectos{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .projecto:last-child{
+        margin-top: 30px;
+    }
+    .projecto{
+        width: 100%;
+        padding: 10px 5px;
+    }
+    .projecto img{
+        margin-bottom: .5rem;
+    }
+    .btnProjecto{
+        gap: 0%;
+    }
+    .btnProjecto .btnProj{
+        width: auto;
+        height: auto;
+        padding: 6px 10px;
+        font-size: 18px;
+        border-radius: 4px;
+    }
+    .btnProjecto .btnInfoProj{
+        width: auto;
+        height: auto;
+        padding: 6px 15px;
+        font-size: 18px;
+        border-radius: 4px;
+    }
+    .btnInfoProj i{
+        color: #1d1dfd;
+        font-size: 16px;
+        margin-left: 6px;
+    }
+
+
     /* FOOTER */
     .footer_main{
         width: 87%;
@@ -866,6 +1095,10 @@ ul li a:hover{
     }
 
     #footer .footer_redesSociais{
-        height: 15%;
+        width: 80%;
+    }
+
+    #footer .footer_redesSociais ul{
+        width: 60%;
     }
 }
