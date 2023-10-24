@@ -6,7 +6,7 @@ icon_menu.addEventListener('click', () =>{
 
     menu_mobile.classList.toggle('open')  
 })
-
+ 
 
 /* ALTERAR A COR DE FUNDO DO CABEÇALHO */
 window.addEventListener('scroll', ()=>{
