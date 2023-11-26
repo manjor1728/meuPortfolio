@@ -50,6 +50,11 @@ const abrirModal2 = document.getElementById('abrirModal2')
 const fundoModal2 = document.querySelector('.fundoModal2')
 const modal2 = document.querySelector('.modal2')
 
+const btnFecharModal3 = document.getElementById('btnFecharModal3')
+const abrirModal3 = document.getElementById('abrirModal3')
+const fundoModal3 = document.querySelector('.fundoModal3')
+const modal3 = document.querySelector('.modal3')
+
 
 abrirModal.addEventListener('click', ()=>{
     toggleModal()
@@ -69,4 +74,13 @@ abrirModal2.addEventListener('click', ()=>{
 btnFecharModal2.addEventListener('click', ()=>{
     fundoModal2.classList.toggle('fecharModal2')
     modal2.classList.toggle('fecharModal2')
+})
+
+abrirModal3.addEventListener('click', ()=>{
+    fundoModal3.classList.toggle('fecharModal3')
+    modal3.classList.toggle('fecharModal3')
+})
+btnFecharModal3.addEventListener('click', ()=>{
+    fundoModal3.classList.toggle('fecharModal3')
+    modal3.classList.toggle('fecharModal3')
 })
