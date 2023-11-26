@@ -274,7 +274,7 @@
 /* PROJECTOS */
 #projectos{
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 .projectosMain{
     width: 80%;
@@ -290,21 +290,23 @@
     padding: 2rem 0 3rem;
 }
 .projectos{
-    width: 80%;
-    height: 100%;
+    width: 100%;
+    height: auto;
     display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
-    gap: 5%;
-    justify-content: space-between;
+    gap: 3rem;
+    justify-content: center;
 }
 .projecto{
-    width: 45%;
-    height: 100%;
+    width: 22rem;
+    max-width: 100%;
+    height: auto;
     display: block;
 }
 .projecto img{
     width: 100%;
-    height: 80%;
+    height: 15rem;
     margin-bottom: 1rem;
     box-shadow: 1px 1px 5px -1px;
 }
@@ -353,7 +355,7 @@
 
 
 /* MODAL */
-#modal .fundoModal, #modal2 .fundoModal2{
+#modal .fundoModal, #modal2 .fundoModal2, #modal3 .fundoModal3{
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
@@ -363,7 +365,7 @@
     position: fixed;
     transition: all .6s;
 }
-#modal .modal, #modal2 .modal2{
+#modal .modal, #modal2 .modal2, #modal3 .modal3{
     width: 400px;
     height: 340px;
     display: block;
@@ -376,7 +378,7 @@
     border-radius: 3px;
     transition: all .8s;
 }
-.modal .headerModal, .modal2 .headerModal2{
+.modal .headerModal, .modal2 .headerModal2, .modal3 .headerModal3{
     display: flex;
     height: 3rem;
     margin: 0 0px 20px;
@@ -385,11 +387,11 @@
     align-items: center;
     padding: 10px;
 }
-.headerModal h3, .headerModal2 h3{
+.headerModal h3, .headerModal2 h3, .headerModal3 h3{
     font-size: 25px;
     color: #1d1dfd;
 }
-.headerModal p, .headerModal2 p{
+.headerModal p, .headerModal2 p, .headerModal3 p{
     width: 45px;
     height: 30px;
     line-height: 25px;
@@ -401,19 +403,19 @@
     border-radius: 5px;
     cursor: pointer;
 }
-.headerModal p:hover, .headerModal2 p:hover{
+.headerModal p:hover, .headerModal2 p:hover, .headerModal3 p:hover{
     opacity: 1;
     transition: all .6s ease-out;
 }
-.bodyModal p, .bodyModal2 p{
+.bodyModal p, .bodyModal2 p, .bodyModal3 p{
     padding: 10px 20px 0;
     text-align: justify;
 }
-.fecharModal, .fecharModal2{
+.fecharModal, .fecharModal2, .fecharModal3{
     opacity: 0;
     pointer-events: none;
 }
-#modal .modal.fecharModal, #modal2 .modal2.fecharModal2{
+#modal .modal.fecharModal, #modal2 .modal2.fecharModal2, #modal3 .modal3.fecharModal3{
     top: -15rem;
 }
 
@@ -445,7 +447,7 @@
 .contactos .contactos_main_info{
     width: 100%;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     color: #000;
     justify-content: space-between;
 }
@@ -647,6 +649,11 @@ ul li a:hover{
     .projectosMain{
         width: 85%;
     }
+    .projecto img{
+        width: 100%;
+        height: 15rem;
+        margin-bottom: 1rem;
+    } */
     .btnProjecto .btnProj{
         width: 8rem;
         height: 2rem;
@@ -654,8 +661,8 @@ ul li a:hover{
         font-size: 18px;
     }
     .btnProjecto .btnInfoProj{
-        width: 6rem;
-        height: 2rem;
+        width: 8rem;
+        height: 3rem;
         padding: 0px;
         font-size: 18px;
     }
@@ -677,7 +684,6 @@ ul li a:hover{
    .contactos{
     width: 85%;
     height: auto;
-    display: flex;
     margin-bottom: 0;
     flex-direction: column;
     }
@@ -692,6 +698,7 @@ ul li a:hover{
     }
     .contactos_main_info p:last-of-type{
         margin-right: 0%;
+        margin-top: 2rem;
     }
     .contactos_main_info p{
         font-size: 20px;
@@ -782,18 +789,22 @@ ul li a:hover{
         width: 100%;
     }
     .projecto{
-        width: 48%;
+        width: 100%;
+    }
+    .btnProjecto{
+        gap: 2rem;
+        justify-content: center;
     }
     .btnProjecto .btnProj{
-        width: auto;
-        height: auto;
+        width: 12rem;
+        height: 3rem;
         padding: 2px 2px;
         font-size: 16px;
         border-radius: 3px;
     }
     .btnProjecto .btnInfoProj{
-        width: auto;
-        height: auto;
+        width: 12rem;
+        height: 3rem;
         padding: 2px 2px;
         font-size: 16px;
     }
@@ -835,6 +846,9 @@ ul li a:hover{
     }
     .contactos_main_info p:not(:last-of-type){
         border-right: none;
+    }
+    .contactos_main_info p:nth-child(2){
+        margin-top: 1.2rem;
     }
 
 
@@ -923,7 +937,7 @@ ul li a:hover{
         height: 100%;
         display: block;
     }
-    .projecto:last-child{
+    .projecto:not(:first-child){
         margin-top: 30px;
     }
     .projecto{
@@ -933,20 +947,27 @@ ul li a:hover{
     .projecto img{
         margin-bottom: .5rem;
     }
-    .btnProjecto{
-        gap: 0%;
-    }
+
+
+
+
+
+    
+.btnProjecto{
+    gap: 1rem;
+    justify-content: center;
+}
     .btnProjecto .btnProj{
-        width: auto;
-        height: auto;
+        width: 9rem;
+        height: 3rem;
         padding: 6px 10px;
         font-size: 18px;
         border-radius: 4px;
     }
     .btnProjecto .btnInfoProj{
-        width: auto;
-        height: auto;
-        padding: 6px 15px;
+        width: 9rem;
+        height: 3rem;
+        padding: 6px 12px;
         font-size: 18px;
         border-radius: 4px;
     }
